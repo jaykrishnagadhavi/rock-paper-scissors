@@ -2,24 +2,41 @@
 // 2 = paper
 // 3 = scissors
 
-// getComputerChoice = Math.floor(Math.random() * 3) + 1; 
-getComputerChoice = "rock";
-playerChoice = prompt();
+getComputerChoice = Math.floor(Math.random()*3) + 1;
+playerSelection = prompt("");
 
-function playRound (playerChoice, getComputerChoice) {
-    if (getComputerChoice == "rock") {
-        if (playerChoice.toLowerCase() == "rock") {
-            console.log("Computer chooses Rock, it's a tie");
-        } else if (playerChoice == 2) {
-            console.log("Computer chooses rock, You choose Paper, You win!!");
+function playRound (getComputerChoice, playerSelection) {
+    if (getComputerChoice == 1) {
+        if (playerSelection.toLowerCase() == "rock") {
+            alert("Computer chooses rock, it's a tie");
+        } else if (playerSelection.toLowerCase() == "paper") {
+            alert("Computer chooses rock, you win!");
+        } else if (playerSelection.toLowerCase() == "scissors") {
+            alert("Computer chooses rock, you lose");
         } else {
-            console.log("Compter chooses rock, you choose scissors, computer wins");
+            alert("An error occurred!!");
         }
     } else if (getComputerChoice == 2) {
-        if (playerChoice == 1) {
-            console.log("You choose Paper")
+        if (playerSelection.toLowerCase() == "rock") {
+            alert("Computer chooses paper, you lose");
+        } else if (playerSelection.toLowerCase() == "paper") {
+            alert("Computer chooses paper, it's a tie");
+        } else if (playerSelection.toLowerCase() == "scissors") {
+            alert("Computer chooses paper, you win");
+        } else {
+            alert("An Erros occured");
         }
+    } else if (getComputerChoice == 3) {
+        if (playerSelection.toLowerCase() == "rock") {
+            alert("Computer chooses scissors, you win");
+        } else if (playerSelection.toLowerCase() == "paper") {
+            alert("Computer chooses scissors, you lose");
+        } else if (playerSelection.toLowerCase() == "scissors") {
+            alert("Computer chooses scissors, it's a tie");
+        }
+    } else {
+        alert("An error occured");
     }
 }
 
-playRound(playerChoice, getComputerChoice);
+playRound(getComputerChoice, playerSelection);
